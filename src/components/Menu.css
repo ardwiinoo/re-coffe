@@ -1,0 +1,211 @@
+/* ========================================
+   Menu Section Styles
+   ======================================== */
+
+.menu {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.menu__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 22, 18, 0.92) 0%,
+    rgba(26, 22, 18, 0.88) 50%,
+    rgba(26, 22, 18, 0.95) 100%
+  );
+}
+
+.menu__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.menu__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.menu__header .section-subtitle::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu__header .section-description {
+  margin: 0 auto;
+}
+
+/* Filters */
+.menu__filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-3xl);
+  flex-wrap: wrap;
+}
+
+.menu__filter {
+  position: relative;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast);
+  z-index: 1;
+}
+
+.menu__filter:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.menu__filter--active {
+  color: var(--color-white);
+}
+
+.menu__filter-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  z-index: -1;
+}
+
+/* Grid */
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+/* Card */
+.menu__card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.menu__card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(196, 149, 106, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(196, 149, 106, 0.08);
+}
+
+.menu__card-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.menu__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu__card-content {
+  text-align: center;
+}
+
+.menu__card-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-sm);
+}
+
+.menu__card-star {
+  fill: var(--color-accent-light);
+  stroke: var(--color-accent-light);
+  font-size: 0.85rem;
+}
+
+.menu__card-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-xs);
+}
+
+.menu__card-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+  margin-bottom: var(--space-lg);
+}
+
+.menu__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__card-price {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent-light);
+}
+
+.menu__card-add {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(196, 149, 106, 0.2);
+  border: 1px solid rgba(196, 149, 106, 0.3);
+  color: var(--color-accent-light);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.menu__card-add:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+  transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu__grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}

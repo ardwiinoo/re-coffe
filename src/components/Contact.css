@@ -1,0 +1,193 @@
+/* ========================================
+   Contact / Booking Section Styles
+   ======================================== */
+
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contact__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 22, 18, 0.93) 0%,
+    rgba(26, 22, 18, 0.85) 100%
+  );
+}
+
+.contact__container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* Info Side */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__info .section-description {
+  margin-bottom: var(--space-2xl);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.contact__detail:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(196, 149, 106, 0.2);
+  transform: translateX(8px);
+}
+
+.contact__detail-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(196, 149, 106, 0.15);
+  color: var(--color-accent-light);
+  font-size: 1.2rem;
+}
+
+.contact__detail-title {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent-light);
+  margin-bottom: 2px;
+}
+
+.contact__detail-text {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Form */
+.contact__form-wrapper {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.contact__form-title {
+  font-size: 1.4rem;
+  color: var(--color-espresso);
+  margin-bottom: var(--space-xl);
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.contact__field {
+  margin-bottom: var(--space-lg);
+}
+
+.contact__field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-espresso-light);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--color-latte);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  color: var(--color-espresso);
+  background: var(--color-cream);
+  transition: border-color var(--transition-fast);
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: var(--color-mocha-light);
+  opacity: 0.6;
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.contact__submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-top: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact__form-wrapper {
+    padding: var(--space-xl);
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+  }
+}
